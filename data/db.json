@@ -1,0 +1,36 @@
+{
+    "events":[
+        {
+            "id":1,
+            "title":"Event 1",
+            "sub event":[
+                {
+                    "id":1,
+                    "title":"SubEvent 1",
+                    "expense":"Expense for sub event 1"
+                },
+                {
+                    "id":1,
+                    "title":"SubEvent 2",
+                    "expense":"Expense for sub event 2"
+                }
+            ]
+        },
+        {
+            "id":2,
+            "title":"Event 2",
+            "sub event":[
+                {
+                    "id":2,
+                    "title":"SubEvent 1",
+                    "expense":"Expense for sub event 1"
+                },
+                {
+                    "id":2,
+                    "title":"SubEvent 2",
+                    "expense":"Expense for sub event 2"
+                }
+            ]
+        }
+    ]
+}
