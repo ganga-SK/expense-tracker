@@ -1,5 +1,6 @@
 import Home from "./Home";
 import Navbar from "./Navbar";
+import EventDetails from "./EventDetails";
 import AddExpense from "./AddExpense";
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 
@@ -12,6 +13,9 @@ function App() {
           <Switch>
             <Route exact path='/'>
               <Home />
+            </Route>
+            <Route path="/events/:id">
+              <EventDetails/>
             </Route>
             <Route path="/create" component={AddExpense} />
           </Switch>
