@@ -1,36 +1,55 @@
 {
-    "events":[
+  "events": [
+    {
+      "id": 1,
+      "title": "Event 1",
+      "max-budget": 1000,
+      "subevent": [
         {
-            "id":1,
-            "title":"Event 1",
-            "subevent":[
-                {
-                    "id":1,
-                    "title":"SubEvent 1",
-                    "expense":"Expense for sub event 1"
-                },
-                {
-                    "id":1,
-                    "title":"SubEvent 2",
-                    "expense":"Expense for sub event 2"
-                }
-            ]
+          "id": 1,
+          "title": "SubEvent 1",
+          "expense": "Expense for sub event 1"
         },
         {
-            "id":2,
-            "title":"Event 2",
-            "subevent":[
-                {
-                    "id":2,
-                    "title":"SubEvent 1",
-                    "expense":"Expense for sub event 1"
-                },
-                {
-                    "id":2,
-                    "title":"SubEvent 2",
-                    "expense":"Expense for sub event 2"
-                }
-            ]
+          "id": 1,
+          "title": "SubEvent 2",
+          "expense": "Expense for sub event 2"
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Event 2",
+      "max-budget": 2000,
+      "subevent": [
+        {
+          "id": 2,
+          "title": "SubEvent 1",
+          "expense": "Expense for sub event 1"
+        },
+        {
+          "id": 2,
+          "title": "SubEvent 2",
+          "expense": "Expense for sub event 2"
+        }
+      ]
+    },
+    {
+      "id": "1a95",
+      "title": "Event 4",
+      "maxbudget": "4000",
+      "subevent": []
+    },
+    {
+      "id": "5c9e",
+      "title": "Event 4",
+      "maxbudget": "4000",
+      "subevent": [
+        {
+          "title": "sub event 1",
+          "expense": "200"
+        }
+      ]
+    }
+  ]
 }

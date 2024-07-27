@@ -3,10 +3,7 @@ import { useParams } from "react-router-dom";
 
 const EventDetails = ({ events }) => {
 
-
     const { id } = useParams();
-
-    
 
     if (!events) {
         return <div>Loading...</div>;
@@ -14,7 +11,7 @@ const EventDetails = ({ events }) => {
     console.log(events);
     let event1;
     events.map(event=>{
-        if(event.id==parseInt(id)){
+        if(event.id===parseInt(id)){
             event1 = event;
         }
     });
@@ -23,21 +20,15 @@ const EventDetails = ({ events }) => {
 
     const subevent=event1.subevent;
     
-    
-
     return ( 
         <div className="event-details">
             {event1 ? (
-                    
                     <>
                         <h2 className="event-detail-title">{event1.title}</h2>
                         <div className="sub">
                         {subevent.map(subevent => (
                             <div className="sep-subs">{subevent.title}:  {subevent.expense}</div>))}
                         </div>
-                            
-    
-
                     </>
                 ):(<p>Event not found</p>)
             }
