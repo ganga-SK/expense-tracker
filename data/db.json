@@ -3,7 +3,7 @@
         {
             "id":1,
             "title":"Event 1",
-            "sub event":[
+            "subevent":[
                 {
                     "id":1,
                     "title":"SubEvent 1",
@@ -19,7 +19,7 @@
         {
             "id":2,
             "title":"Event 2",
-            "sub event":[
+            "subevent":[
                 {
                     "id":2,
                     "title":"SubEvent 1",

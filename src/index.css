@@ -36,6 +36,34 @@ body{
   border-radius: 10px;
 }
 
+.event-preview{
+  padding:20px;
+  transition: background-color 0.3s;
+  color: goldenrod;
+}
+
+
+
+.sub{
+  padding-left: 20px;
+}
+
+.event-detail-title{
+  padding: 20px;
+}
+
+.sep-subs{
+  padding-bottom: 20px;
+}
+
+
+
+.event-list .event-preview:hover{
+  background-color: goldenrod;
+  color: rgb(12, 1, 1);
+  border-radius: 10px;
+}
+
 
 
 
