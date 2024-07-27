@@ -36,6 +36,15 @@ const AddExpense = () => {
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(event)
         })
+        .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        // Handle success, e.g., update UI or show a message
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        // Handle error, e.g., show an error message
+    });
     }
 
     return(
@@ -55,7 +64,7 @@ const AddExpense = () => {
                 onChange={(e)=>setMaxbudget(e.target.value)}
             />
             <button onClick={handleMainEvent}>Save Event</button>
-             <button onClick={(handleSubEvents)}>Add SubEvent</button>
+             <button onClick={handleSubEvents}>Add SubEvent</button>
 
              {subEvents.map((subEvent,index)=>(
                 <div className="sub-event" key={index}>

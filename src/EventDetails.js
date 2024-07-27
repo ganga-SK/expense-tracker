@@ -8,26 +8,37 @@ const EventDetails = ({ events }) => {
     if (!events) {
         return <div>Loading...</div>;
     }
-    console.log(events);
+    
     let event1;
     events.map(event=>{
-        if(event.id===parseInt(id)){
+        if(event.id===(id)){
             event1 = event;
+            console.log(event1);
         }
     });
 
-    console.log(event1);
+    
 
-    const subevent=event1.subevent;
+    let subevent = null;
+
+    
+
+    if(event1!==undefined && event1.subevent!==undefined && event1.subevent!==null){
+        subevent=event1.subevent;
+        console.log(subevent);
+    }
+
+    
     
     return ( 
         <div className="event-details">
             {event1 ? (
                     <>
                         <h2 className="event-detail-title">{event1.title}</h2>
+                        
                         <div className="sub">
-                        {subevent.map(subevent => (
-                            <div className="sep-subs">{subevent.title}:  {subevent.expense}</div>))}
+                        {subevent ? (subevent.map(subevent => (
+                            <div className="sep-subs">{subevent.title}:  {subevent.expense}</div>))):(<div>No Subevents</div>)}
                         </div>
                     </>
                 ):(<p>Event not found</p>)
