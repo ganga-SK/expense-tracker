@@ -6,11 +6,12 @@ const AddExpense = () => {
 
     const [title,setTitle] = useState('');
     const [maxbudget,setMaxbudget] = useState('');
+    const [mainEventId, setMainEventId] = useState(null);
 
     const handleSubEvents =()=>{
         setSubEvents([
             ...subEvents,
-            { title:'',expense:'' }
+            { id: Date.now(),title:'',expense:'' }
         ]);
     };
 
@@ -20,14 +21,23 @@ const AddExpense = () => {
         setSubEvents(newSubEvent);
     };
 
-    /*const handleSave =(index)=>{
-        const subevent = subEvents[index];
-        fetch('http://localhost:8000/events/subevent',{
-            method:'POST',
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(subevent)
+    const handleDelete =(index,subEventId)=>{
+
+        console.log("main event id:",mainEventId,"subevent id:",subEventId);
+        fetch(`http://localhost:8000/events/${mainEventId}/subevent/${subEventId}`, {
+            method: 'DELETE'
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            console.log('Sub-event deleted successfully');
         })
-    }*/
+        .catch(error => {
+            console.error('There was a problem with the DELETE request:', error);
+        });
+
+        setSubEvents(subEvents.filter((_, i) => i !== index));
+    }
 
     const handleMainEvent =()=>{
         const event = {title,maxbudget,subevent:subEvents};
@@ -39,6 +49,7 @@ const AddExpense = () => {
         .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
+        setMainEventId(data.id);
         // Handle success, e.g., update UI or show a message
     })
     .catch((error) => {
@@ -82,7 +93,7 @@ const AddExpense = () => {
                         value={subEvent.expense} 
                         onChange={(e)=>handleSubEventChange(index,'expense',e.target.value)}
                     />
-                    <button>Delete</button>
+                    <button onClick={()=>handleDelete(index,subEvent.id)}>Delete</button>
                     
                 </div>
              ))}

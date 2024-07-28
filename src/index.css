@@ -64,6 +64,14 @@ body{
   border-radius: 10px;
 }
 
+.add-expense button{
+  border-radius: 25px;
+}
+
+.add-expense button:hover{
+  background-color: goldenrod;
+}
+
 
 
 
